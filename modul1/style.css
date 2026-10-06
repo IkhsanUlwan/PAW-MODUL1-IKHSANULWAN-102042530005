@@ -1,0 +1,226 @@
+:root {
+  --primary: #e5527a;
+  --primary-dark: #c93d64;
+  --bg: #fff7f9;
+  --text: #2d2d3a;
+  --muted: #7a7a8c;
+  --success: #1f9d55;
+  --danger: #d64545;
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--primary);
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.pembuka {
+  background: linear-gradient(135deg, var(--primary), #f59bb4);
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+}
+.pembuka h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+.pembuka p {
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+.info {
+  padding: 24px 0 0;
+}
+.info-box {
+  background: #fff;
+  border-left: 5px solid var(--primary);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.katalog {
+  padding: 40px 0 60px;
+}
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card-img {
+  height: 160px;
+  background: #fde4ec;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.kategori {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card h3 {
+  font-size: 1.1rem;
+}
+.harga {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.stok {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.status {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin: 4px 0 10px;
+}
+.status.tersedia {
+  background: #e3f6ea;
+  color: var(--success);
+}
+.status.habis {
+  background: #fbe4e4;
+  color: var(--danger);
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+.btn-light {
+  background: #fff;
+  color: var(--primary-dark);
+  margin-top: 0;
+}
+.btn-disabled {
+  background: #d9d9e0;
+  color: #8b8b98;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .pembuka {
+    padding: 56px 0;
+  }
+  .pembuka h1 {
+    font-size: 1.8rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
